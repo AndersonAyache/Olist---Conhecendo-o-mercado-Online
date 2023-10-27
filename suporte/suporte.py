@@ -3,6 +3,14 @@ def verificacao_de_valores(df):
     df.info()
     print('\n')
 
+    
+    print('Valores nulos:')
+    for coluna in df.columns:
+        
+        print(f'{coluna} -> {df[coluna].isnull().sum()}')
+
+    print('\n')
+
     for coluna in df.columns:
         print('#'* 10 +' Verificando os valores ' +'#' * 10)
         print('\n')
