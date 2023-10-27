@@ -1,16 +1,23 @@
-def verificacao_valores_unicos(df):
-    print('Verificando os valores')
-    for coluna_v in df.columns:
-        print(f'Coluna: *{coluna_v}* - >{df[coluna_v].unique()}\n')
+def verificacao_de_valores(df):
+    for coluna in df.columns:
 
-    print('Contando os Valores')
-    for coluna_c in df.columns:
-        print(f'{coluna_c} contagem -> {df[coluna_c].value_counts()}\n')
+        print('#' * 10 + ' Verificando os valores ' + '#' * 10)
+        print('\n')
 
-def verificar_valor_vazio(df):
-    valores_vazios = 0
-    for coluna_va in df.columns:
-        if ''in  df[coluna_va].unique():
-            print(f'A Coluna {coluna_va} possui valores vazios')
+        print(f'coluna { coluna.upper()}')
+        print('\n')
+        
+        print('-' * 10 + ' Valores unicos ' + '-' * 10)
+        print(f'Coluna: *{coluna}* - >{df[coluna].unique()}\n')
+
+    
+        print('-' * 10 + ' Contand os Valores ' + '-' * 10)
+    
+        print(f'{coluna} contagem -> {df[coluna].value_counts()}\n')
+    
+        if '' in  df[coluna].unique():
+            print(f'A Coluna {coluna} possui valores vazios')
         else:
-            print(f'A coluna {coluna_va} NÃO tem valores vazios')
+            print(f'A coluna {coluna} NÃO tem valores vazios')
+
+        print('\n')
