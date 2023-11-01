@@ -23,17 +23,19 @@ def verificacao_de_valores(df):
         print('-' * 10 + ' Contando os Valores ' + '-' * 10)
     
         print(f'{df[coluna].value_counts()}\n')
-
-        if df[coluna].isnull().sum() > 0 :
-            valores_vazios = df[coluna].isnull().sum()
+        
+        valores_vazios = df[coluna].isnull().sum()
+        
+        if valores_vazios > 0 :
             print(f'Existem {valores_vazios} valorez vazios.')
         else:
             print('Não existem valores vazios.')
 
+        print('\n')
 
         if '' in  df[coluna].unique():
             print(f'A Coluna {coluna} possui valores em branco')
         else:
-            print(f'A coluna {coluna} NÃO tem valores em branco')
+            print(f'A coluna {coluna} não tem valores em branco')
 
         print('\n')
